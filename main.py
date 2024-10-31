@@ -1,7 +1,8 @@
 import sqlite_con as db  # sqlite_con.py samasta hakemistosta
 import pandas as pd
-import numpy as np
 import csv
+
+# import numpy as np
 
 connection = db.conn
 
@@ -37,10 +38,9 @@ for row in rows:
 print(lista)
 
 
-# with open('dump.sql', 'w') as f:
-#     for line in con.iterdump():
-#         f.write('%s\n' % line)
-# con.close()
+with open("leffat.csv", "w", encoding="utf-8", newline="") as file:
+    writer = csv.writer(file)
+    writer.writerows(lista)
 
 # for row in rows:
 #     print(row)
